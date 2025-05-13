@@ -30,6 +30,7 @@ dist-ssr
 .firebaserc
 firebase.json
 dist/
-.firebase.init.js
+.env.local
 
 
+.env.local
