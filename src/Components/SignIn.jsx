@@ -10,10 +10,10 @@ const SignIn = () => {
             const email = e.target.email.value;
             const password = e.target.password.value;
 
-            console.log(email, password);
+            // console.log(email, password);
             signInUser(email,password)
             .then(result => {
-                  console.log(result.user);
+                  // console.log(result.user);
 
                   // update last login time 
                   const lastSignInTime = result?.user?.metadata?.lastSignInTime;
@@ -28,12 +28,12 @@ const SignIn = () => {
                   })
                   .then(res => res.json())
                   .then(data => {
-                        console.log('sign in info update in db', data);
+                        // console.log('sign in info update in db', data);
                   })
 
             })
             .catch(error => {
-                  console.log(error);
+                  // console.log(error);
             })
       }
       return (
@@ -44,7 +44,7 @@ const SignIn = () => {
               <p className="py-6">
                 Provident cupiditate voluptatem et in. Quaerat fugiat ut
                 assumenda excepturi exercitationem quasi. In deleniti eaque aut
-                repudiandae et a id nisi.
+                repudiandae et a id nisi normal paragraph here .
               </p>
             </div>
             <form onSubmit={handleSignIn}>
