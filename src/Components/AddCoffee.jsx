@@ -28,7 +28,7 @@ const AddCoffee = () => {
     // console.log(newCoffee);
 
     // send data to the server
-    fetch("http://localhost:5000/coffee", {
+    fetch("https://coffee-server-ebon.vercel.app/coffee", {
       method: "POST",
       headers: {
         "content-type": "application/json",
@@ -38,7 +38,7 @@ const AddCoffee = () => {
       .then((res) => res.json())
       .then((data) => {
         // console.log(data);
-        if(data.insertedId){
+        if (data.insertedId) {
           Swal.fire({
             title: "Success!",
             text: "User added successfully",
@@ -153,7 +153,7 @@ const AddCoffee = () => {
               type="submit"
               className="btn btn-block bg-[#D2B48C] hover:bg-[#c9a974] text-black"
             >
-              Add Coffee 
+              Add Coffee
             </button>
           </div>
         </form>

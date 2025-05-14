@@ -3,7 +3,7 @@ import { Eye, Edit, Trash } from "lucide-react"; // Make sure lucide-react is in
 import Swal from "sweetalert2";
 import { Link } from "react-router-dom";
 
-const CoffeeCard = ({ coffee, coffees ,setCoffees }) => {
+const CoffeeCard = ({ coffee, coffees, setCoffees }) => {
   const { _id, name, chef, supplier, taste, photo } = coffee;
 
   const handleDelete = (_id) => {
@@ -18,7 +18,7 @@ const CoffeeCard = ({ coffee, coffees ,setCoffees }) => {
       confirmButtonText: "Yes, delete it!",
     }).then((result) => {
       if (result.isConfirmed) {
-        fetch(`http://localhost:5000/coffee/${_id}`, {
+        fetch(`https://coffee-server-ebon.vercel.app/coffee/${_id}`, {
           method: "DELETE",
         })
           .then((res) => res.json())
@@ -30,7 +30,7 @@ const CoffeeCard = ({ coffee, coffees ,setCoffees }) => {
                 text: "Your Coffee has been deleted.",
                 icon: "success",
               });
-              const remaining = coffees.filter(cof => cof._id !== _id);
+              const remaining = coffees.filter((cof) => cof._id !== _id);
               setCoffees(remaining);
             }
           });
